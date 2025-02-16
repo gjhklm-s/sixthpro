@@ -250,7 +250,7 @@ main {
             teams[selectedTeam].remainingBudget = totalBudget - teams[selectedTeam].totalSpent;
             localStorage.setItem("teams", JSON.stringify(teams));
             updateTeamTables();
-            let totalPoints = teams[selectedTeam].players.reduce((sum, p) => sum + p.points, 0);
+            let totalPoints = teams[selectedTeam].players.reduce((sum, p) => sum + (p.points || 0), 0);
 
         // ✅ Construct message
         let message = `${selectedTeam} bought ${player} in the team for ${price} crores.`;
